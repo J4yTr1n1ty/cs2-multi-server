@@ -13,7 +13,7 @@ This is a multi server docker image for hosting multiple CS2 servers on one mach
 ### Build the Docker image
 
 ```bash
-docker build --target=bookworm-base -t ghcr.io/j4ytr1n1ty/cs2-multi-server:latest
+docker build --target=bookworm-base -t ghcr.io/j4ytr1n1ty/cs2-multi-server:latest .
 ```
 
 ### Run using Docker compose
