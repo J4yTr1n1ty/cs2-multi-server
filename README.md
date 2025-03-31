@@ -23,3 +23,7 @@ Navigate to the `examples` directory and execute
 ```bash
 docker compose up
 ```
+
+### In development
+
+You can use the `docker-compose.yml` in the `image` directory. Just run `docker compose up --build` to always rebuild the docker image to the current state.
