@@ -2,7 +2,7 @@
 
 # PRE HOOK
 CSS_VERSION=1.0.314
-MATCHZY_VERSION=0.8.8
+MATCHZY_VERSION=v0.8.8
 
 echo "Installing Metamod"
 wget -qO /tmp/metamod.tar.gz https://mms.alliedmods.net/mmsdrop/2.0/mmsource-2.0.0-git1345-linux.tar.gz
@@ -19,7 +19,7 @@ cp -r /tmp/CounterStrikeSharp/* "${STEAMAPPDIR}"/game/csgo/.
 rm -rf /tmp/CounterStrikeSharp*
 
 echo "Installing MatchZy"
-wget -q0 /tmp/matchzy.zip https://github.com/shobhit-pathak/MatchZy/releases/download/"${MATCHZY_VERSION}"/matchzy-"${MATCHZY_VERSION}".zip
+wget -qO /tmp/matchzy.zip https://github.com/shobhit-pathak/MatchZy/releases/download/"${MATCHZY_VERSION}"/matchzy-"${MATCHZY_VERSION}".zip
 unzip -q /tmp/matchzy.zip -d /tmp/MatchZy
 cp -r /tmp/MatchZy/* "${STEAMAPPDIR}"/game/csgo/
 rm -rf /tmp/MatchZy*
