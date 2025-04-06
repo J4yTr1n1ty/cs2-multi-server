@@ -15,13 +15,13 @@ services:
       - SRCDS_TOKEN # Game Server Token from https://steamcommunity.com/dev/managegameservers
       - DEBUG=0 # (0 - off, 1 - steamcmd, 2 - cs2, 3 - all)
       - STEAMAPPVALIDATE=0 # (0 - no validation, 1 - enable validation)
-      - CS2_SERVERNAME=changeme # (Set the visible name for your private server.)
+      - CS2_SERVERNAME=PolyLAN Match Server  # (Set the visible name for your private server.)
       - CS2_CHEATS=0 # (0 - disable cheats, 1 - enable cheats)
       - CS2_PORT=27015 # (CS2 server listen port tcp_udp)
       - CS2_SERVER_HIBERNATE=0 # (Put server in a low CPU state when there are no players. 0 - hibernation disabled, 1 - hibernation enabled)
       - CS2_RCON_PORT # (Optional, use a simple TCP proxy to have RCON listen on an alternative port. Useful for services like AWS Fargate which do not support mixed protocol ports.)
       - CS2_LAN=0 # (0 - LAN mode disabled, 1 - LAN Mode enabled)
-      - CS2_RCONPW=changeme # (RCON password)
+      - CS2_RCONPW=P0lyRC0N # (RCON password)
       - CS2_PW # (Optional, CS2 server password)
       - CS2_MAXPLAYERS=10 # (Max players)
       - CS2_ADDITIONAL_ARGS # (Optional additional arguments to pass into cs2)
@@ -31,7 +31,7 @@ services:
       - CS2_GAMETYPE=0 # (Used if CS2_GAMEALIAS not defined. See https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers)
       - CS2_GAMEMODE=1 # (Used if CS2_GAMEALIAS not defined. See https://developer.valvesoftware.com/wiki/Counter-Strike_2/Dedicated_Servers)
       - CS2_MAPGROUP=mg_active # (Map pool. Ignored if Workshop maps are defined.)
-      - CS2_STARTMAP=de_inferno # (Start map. Ignored if Workshop maps are defined.)
+      - CS2_STARTMAP=de_mirage # (Start map. Ignored if Workshop maps are defined.)
       # Workshop Maps
       - CS2_HOST_WORKSHOP_COLLECTION # The workshop collection to use
       - CS2_HOST_WORKSHOP_MAP # The workshop map to use. If collection is also defined, this is the starting map.
@@ -41,17 +41,17 @@ services:
       - CS2_BOT_QUOTA_MODE # (fill, competitive)
       # TV
       - TV_AUTORECORD=0 # Automatically records all games as CSTV demos: 0=off, 1=on.
-      - TV_ENABLE=0 # Activates CSTV on server: 0=off, 1=on.
+      - TV_ENABLE=1 # Activates CSTV on server: 0=off, 1=on.
       - TV_PORT=27020 # Host SourceTV port
-      - TV_PW=changeme # CSTV password for clients
-      - TV_RELAY_PW=changeme # CSTV password for relay proxies
+      - TV_PW # CSTV password for clients
+      - TV_RELAY_PW # CSTV password for relay proxies
       - TV_MAXRATE=0 # World snapshots to broadcast per second. Affects camera tickrate.
-      - TV_DELAY=0 # CSTV broadcast delay in seconds
+      - TV_DELAY=180 # CSTV broadcast delay in seconds
       # Logs
       - CS2_LOG=on # 'on'/'off'
-      - CS2_LOG_MONEY=0 # Turns money logging on/off: (0=off, 1=on)
-      - CS2_LOG_DETAIL=0 # Combat damage logging: (0=disabled, 1=enemy, 2=friendly, 3=all)
-      - CS2_LOG_ITEMS=0 # Turns item logging on/off: (0=off, 1=on)
+      - CS2_LOG_MONEY=1 # Turns money logging on/off: (0=off, 1=on)
+      - CS2_LOG_DETAIL=3 # Combat damage logging: (0=disabled, 1=enemy, 2=friendly, 3=all)
+      - CS2_LOG_ITEMS=1 # Turns item logging on/off: (0=off, 1=on)
     stdin_open: true # Add local console for docker attach, docker attach --sig-proxy=false cs2-dedicated
     tty: true # Add local console for docker attach, docker attach --sig-proxy=false cs2-dedicated
 
@@ -73,13 +73,13 @@ services:
       - SRCDS_TOKEN
       - DEBUG=0
       - STEAMAPPVALIDATE=0
-      - CS2_SERVERNAME=changeme
+      - CS2_SERVERNAME=PolyLAN Match Server
       - CS2_CHEATS=0
       - CS2_PORT=27015
       - CS2_SERVER_HIBERNATE=0
       - CS2_RCON_PORT
       - CS2_LAN=0
-      - CS2_RCONPW=changeme
+      - CS2_RCONPW=P0lyRC0N
       - CS2_PW
       - CS2_MAXPLAYERS=10
       - CS2_ADDITIONAL_ARGS
@@ -89,7 +89,7 @@ services:
       - CS2_GAMETYPE=0
       - CS2_GAMEMODE=1
       - CS2_MAPGROUP=mg_active
-      - CS2_STARTMAP=de_inferno
+      - CS2_STARTMAP=de_mirage
       # Workshop Maps
       - CS2_HOST_WORKSHOP_COLLECTION
       - CS2_HOST_WORKSHOP_MAP
@@ -101,13 +101,13 @@ services:
       - TV_AUTORECORD=0
       - TV_ENABLE=0
       - TV_PORT=27020
-      - TV_PW=changeme
-      - TV_RELAY_PW=changeme
+      - TV_PW
+      - TV_RELAY_PW
       - TV_MAXRATE=0
-      - TV_DELAY=0
+      - TV_DELAY=180
       - CS2_LOG=on
-      - CS2_LOG_MONEY=0
-      - CS2_LOG_DETAIL=0
-      - CS2_LOG_ITEMS=0
+      - CS2_LOG_MONEY=1
+      - CS2_LOG_DETAIL=3
+      - CS2_LOG_ITEMS=1
     stdin_open: true
     tty: true
